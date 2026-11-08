@@ -1,0 +1,16 @@
+speaker = "A former Wall Street trader who co-founded a hedge fund and is now an Orthodox rabbi giving long religious lectures."
+
+gold = """Anything drawn from his finance and business years: how trading desks, hedge funds, banks,
+deals and negotiations actually work; anecdotes about specific people, firms or trades; heuristics
+about money, risk, leverage, hiring, incentives and compensation; numbers; insider terminology;
+how the wealthy and powerful actually behave and decide."""
+
+chaff = """Religious instruction, moral exhortation, scripture and Talmud exegesis, warnings about
+materialism, community announcements, and any claim that money comes from God, blessings, charity
+(tzedakah), prayer, Torah study or righteousness: miracle stories about someone's wealth after
+they gave charity, "Hashem decides your income", tithing advice."""
+
+# Passed to Whisper as hotwords so it spells domain terms right (CPU only: they crash the ROCm build).
+vocabulary = "hedge fund, Goldman Sachs, Torah, Talmud, Gemara, Hashem, yeshiva, Rambam, arbitrage, LP, GP"
+
+language = "en"

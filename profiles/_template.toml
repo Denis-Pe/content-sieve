@@ -1,0 +1,17 @@
+# Copy to profiles/<name>.toml and run: poetry run python sieve.py <name> <inputs...>
+
+# Who is talking and what insider experience they have.
+speaker = "A retired intelligence officer who now hosts a history podcast."
+
+# What counts as a nugget. Be concrete: the LLM can only find what you describe.
+gold = """How intelligence work actually operates: recruitment, tradecraft, bureaucracy and budget
+fights, how analysis reaches decision makers, anecdotes about real operations."""
+
+# What the talk is mostly about and should be skipped.
+chaff = "Retellings of well-known historical events, general commentary, sponsor reads."
+
+# Optional: terms Whisper tends to misspell. Only used when transcribing on the CPU.
+vocabulary = ""
+
+# Optional: ISO code; skips language detection. Remove to auto-detect.
+language = "en"
