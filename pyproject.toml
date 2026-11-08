@@ -1,0 +1,37 @@
+[project]
+name = "content-sieve"
+version = "0.2.0"
+description = "Mine long talks for the insider knowledge buried in them"
+authors = [
+    {name = "Denis Perdomo",email = "joanp307@gmail.com"}
+]
+requires-python = ">=3.13,<3.14"
+dependencies = [
+    "faster-whisper (>=1.2.1,<2.0.0)",
+    # av 19 dropped the `metadata_errors` kwarg faster-whisper 1.2.1 passes to av.open()
+    "av (>=16,<19)",
+    "ollama (>=0.6.3,<0.7.0)",
+    "rapidfuzz (>=3.12,<4.0)",
+    "yt-dlp (>=2025.10.14)",
+    # ROCm build of CTranslate2 (see setup.sh) plus the ROCm 7 runtime it links against
+    "ctranslate2 (==4.8.3)",
+    "rocm-sdk-core (==7.13.0)",
+    "rocm-sdk-libraries-gfx103x-all (==7.13.0)",
+]
+
+[tool.poetry]
+package-mode = false
+
+[tool.poetry.dependencies]
+ctranslate2 = {path = "vendor/ctranslate2-4.8.3-cp313-cp313-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl"}
+rocm-sdk-core = {source = "amd-rocm"}
+rocm-sdk-libraries-gfx103x-all = {source = "amd-rocm"}
+
+[[tool.poetry.source]]
+name = "amd-rocm"
+url = "https://repo.amd.com/rocm/whl/gfx103X-all/"
+priority = "explicit"
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
